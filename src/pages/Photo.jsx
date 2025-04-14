@@ -3,18 +3,18 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Photo() {
   const images = [
-    { src: '/images/1200px-haas-in-het-grasjpg.webp', alt: 'Зайці в траві' },
-    { src: '/images/1200px-hasebeioberwerbejpg.webp', alt: 'Зайці в полі' },
-    { src: '/images/european-hare-6121jpg.webp', alt: 'Європейський заєць' },
-    { src: '/images/fFKuESpf7VTCGBNPscig.webp', alt: 'Зайці на лузі' },
-    { src: '/images/halljnes.webp', alt: 'Зайці в лісі' },
-    { src: '/images/zu6YRoYqGYVyExZ54dDT.webp', alt: 'Зайці на лузі' }
+    { src: '/img/1200px-2-fennec-foxes-motoyama.webp', alt: 'Фенеки в траві' },
+    { src: '/img/fennec-fox-peekjpg.webp', alt: 'Фенеки в полі' },
+    { src: '/img/fennec-fox-sleeping-1.webp', alt: 'Європейський заєць' },
+    { src: '/img/fennec-fox-sleeping.webp', alt: 'Фенеки на лузі' },
+    { src: '/img/fennec-vulpes-zerda-1.webp', alt: 'Фенеки в лісі' },
+    { src: '/img/fennec.webp', alt: 'Фенеки на лузі' }
   ];
 
   return (
     <main className="container px-4 py-4 flex-grow-1">
       <article>
-        <h2 className="h2 text-success mb-4">Фотогалерея зайців</h2>
+        <h2 className="h2 text-success mb-4">Фотогалерея Фенеків</h2>
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
             {images.map((_, index) => (

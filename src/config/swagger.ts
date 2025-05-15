@@ -4,9 +4,9 @@ export const swaggerSpec = {
     openapi: '3.0.0',
     // Загальна інформація про API
     info: {
-        title: 'API Сайту про Зайців',
+        title: 'API Сайту про Лисицю Фенек',
         version: '1.0.0',
-        description: 'Документація API для Сайту про Зайців',
+        description: 'Документація API для Сайту про Лисицю Фенек',
     },
     // Налаштування серверів для тестування API
     servers: [
@@ -20,18 +20,18 @@ export const swaggerSpec = {
     ],
     // Визначення роутерів API та операцій з ними
     paths: {
-        '/api/rabbits': {
-            // GET запит для отримання всіх зайців
+        '/api/fennecs': {
+            // GET запит для отримання всіх лисиць Фенек
             get: {
-                summary: 'Отримати всіх зайців',
+                summary: 'Отримати всіх Фенеків',
                 responses: {
                     '200': {
-                        description: 'Список всіх зайців',
+                        description: 'Список всіх Фенеків',
                         content: {
                             'application/json': {
                                 schema: {
                                     type: 'array',
-                                    items: { $ref: '#/components/schemas/Rabbit' },
+                                    items: { $ref: '#/components/schemas/Fennec' },
                                 },
                             },
                         },
@@ -41,21 +41,21 @@ export const swaggerSpec = {
 
             // POST запит для створення нового зайця
             post: {
-                summary: 'Створити нового зайця',
+                summary: 'Створити нову лисицю',
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Fennec' },
                         },
                     },
                 },
                 responses: {
                     '201': {
-                        description: "Створений об'єкт зайця",
+                        description: "Створений об'єкт лисиці",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Fennec' },
                             },
                         },
                     },
@@ -64,111 +64,111 @@ export const swaggerSpec = {
         },
 
         // Операції для конкретного зайця за ID
-        '/api/rabbits/{id}': {
+        '/api/fennecs/{id}': {
             // GET запит для отримання зайця за ID
             get: {
-                summary: 'Отримати зайця за ID',
+                summary: 'Отримати лисицю за ID',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID лисиці',
                     },
                 ],
                 responses: {
                     '200': {
-                        description: "Об'єкт зайця",
+                        description: "Об'єкт лисиці",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Fennec' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Лисицю не знайдено' },
                 },
             },
 
             // PUT запит для повного оновлення зайця за ID
             put: {
-                summary: 'Повністю оновити зайця',
+                summary: 'Повністю оновити Лисицю',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID лисиці',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Fennec' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт лисиці",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Fennec' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Лисицю не знайдено' },
                 },
             },
             // PATCH запит для часткового оновлення зайця за ID
             patch: {
-                summary: 'Частково оновити зайця',
+                summary: 'Частково оновити лисицю',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID лисиці',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Fennec' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт лисиці",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Fennec' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Лисицю не знайдено' },
                 },
             },
             // DELETE запит для видалення даних про зайця за ID
             delete: {
-                summary: 'Видалити дані про зайця',
+                summary: 'Видалити дані про лисицю',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID лисиці',
                     },
                 ],
                 responses: {
                     '200': { description: 'Повідомлення про успішне видалення' },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Лисицю не знайдено' },
                 },
             },
         },
@@ -179,34 +179,38 @@ export const swaggerSpec = {
         // Схеми даних
         schemas: {
             // Схема об'єкта Заєць
-            Rabbit: {
+            Fennec: {
                 type: 'object',
                 required: ['name', 'age', 'height', 'weight', 'gender'],
                 properties: {
                     name: {
                         type: 'string',
-                        description: "Ім'я зайця",
+                        description: "Ім'я лисиці",
                     },
                     age: {
                         type: 'number',
-                        description: 'Вік зайця у роках',
+                        description: 'Вік лисиці у роках',
                     },
                     height: {
                         type: 'number',
-                        description: 'Висота зайця в сантиметрах',
+                        description: 'Висота лисиці в сантиметрах',
                     },
                     weight: {
                         type: 'number',
-                        description: 'Вага зайця в кілограмах',
+                        description: 'Вага лисиці в кілограмах',
                     },
                     gender: {
                         type: 'string',
                         enum: ['male', 'female'],
-                        description: 'Стать зайця',
+                        description: 'Стать лисиці',
+                    },
+                    antiPredatorBehavior: {
+                        type: 'string',
+                        description: 'Реакції та стратегії захисту від хижаків або небезпеки',
                     },
                     description: {
                         type: 'string',
-                        description: "Опис зайця (необов'язкове поле)",
+                        description: "Опис лисиці (необов'язкове поле)",
                     },
                 },
             },
